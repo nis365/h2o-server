@@ -4,15 +4,13 @@
 
 # pull base image
 FROM openjdk:latest
-
-WORKDIR /root
+USER root
 
 RUN yum -y install wget unzip
 
-RUN wget http://h2o-release.s3.amazonaws.com/h2o/rel-yu/3/h2o-3.28.0.3.zip -O h2o.zip && unzip h2o.zip \
-    && cd  h2o-3.28.0.3/
+RUN cd /root && wget http://h2o-release.s3.amazonaws.com/h2o/rel-yu/3/h2o-3.28.0.3.zip -O h2o.zip && unzip h2o.zip
 
-COPY docker-init.sh /root
+COPY docker-init.sh /root/
 
 EXPOSE 54321
 
