@@ -4,8 +4,7 @@
 
 # pull base image
 FROM openjdk:latest
-
-WORKDIR /root
+USER root
 
 RUN yum -y install wget unzip
 
