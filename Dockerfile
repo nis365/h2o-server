@@ -25,4 +25,6 @@ EXPOSE 54321
 
 # ENTRYPOINT ["java", "-Xmx2g", "-jar", "/tmp/h2o-3.28.0.3/h2o.jar"]
 # Define default command
+HEALTHCHECK CMD ["curl", "-f", "http://localhost:54321/flow/index.html"]
+
 CMD ["/opt/h2o/docker-init.sh"]
