@@ -15,7 +15,7 @@ RUN cd /root && wget http://h2o-release.s3.amazonaws.com/h2o/rel-yu/3/h2o-3.28.0
 
 
 
-RUN mkdir /opt/h2o && cd /opt/h2o
+RUN mkdir /tmp/ice_root && mkdir /opt/h2o && cd /opt/h2o
 
 COPY docker-init.sh /opt/h2o/docker-init.sh
 COPY GBM_model_python_1584541984902_1 /opt/h2o/model_files/GBM
